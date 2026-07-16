@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PocketPlanner — Model your money. Meet your future.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle" type="button">
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+  <span class="toggle-label">Dark mode</span>
+</button>
+
+<div class="anim-nav-wrap">
+  <nav class="anim-nav" id="animNav">
+    <div class="anim-nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+        <path d="M 85 30 A 42 42 0 1 0 85 90" stroke="var(--sage)" stroke-width="10" stroke-linecap="round"/>
+        <polyline points="44,76 66,54 79,63 101,39" stroke="var(--gold)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="101" cy="39" r="6.5" fill="var(--gold)"/>
+      </svg>
+    </div>
+    <div class="anim-nav-links">
+      <a href="#home">Home</a>
+      <a href="#mission">Mission</a>
+      <a href="#why-track">Why Track</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#features">Features</a>
+      <a href="#" class="anim-nav-cta" data-auth-link="signup">Sign Up</a>
+    </div>
+    <div class="anim-nav-collapsed-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </div>
+  </nav>
+</div>
+
+<section id="home" class="cinematic-hero">
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="bg-grid-theme" aria-hidden="true"></div>
+
+  <div class="hero-text-wrapper">
+    <h1 class="text-track text-3d-matte gsap-reveal">Track every dollar,</h1>
+    <h1 class="text-days text-silver-matte gsap-reveal">own your future.</h1>
+  </div>
+
+  <div class="main-card-wrap">
+    <div class="main-card premium-depth-card" id="mainCard">
+      <div class="card-sheen" aria-hidden="true"></div>
+
+      <div class="card-grid">
+        <div class="card-right-text gsap-reveal">
+          <h2 class="text-card-silver-matte">PocketPlanner</h2>
+        </div>
+
+        <div class="mockup-scroll-wrapper gsap-reveal">
+          <div class="mockup-inner">
+            <div class="iphone-bezel" id="mockup">
+              <div class="hw-btn hw-btn-1" aria-hidden="true"></div>
+              <div class="hw-btn hw-btn-2" aria-hidden="true"></div>
+              <div class="hw-btn hw-btn-3" aria-hidden="true"></div>
+              <div class="hw-btn hw-btn-side" aria-hidden="true"></div>
+
+              <div class="screen">
+                <div class="screen-glare" aria-hidden="true"></div>
+                <div class="dynamic-island"><span class="island-dot"></span></div>
+
+                <div class="app-ui">
+                  <div class="phone-widget app-ui-header">
+                    <div class="app-ui-header-text">
+                      <span class="app-ui-eyebrow">Today</span>
+                      <span class="app-ui-title">Overview</span>
+                    </div>
+                    <div class="app-ui-avatar">PP</div>
+                  </div>
+
+                  <div class="phone-widget ring-wrap">
+                    <svg viewBox="0 0 176 176" aria-hidden="true">
+                      <circle cx="88" cy="88" r="64" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="12"/>
+                      <circle class="progress-ring" cx="88" cy="88" r="64" fill="none" stroke="#D8BB7A" stroke-width="12"/>
+                    </svg>
+                    <div class="ring-center">
+                      <span class="counter-val">0</span>
+                      <span class="ring-label">% To Goal</span>
+                    </div>
+                  </div>
+
+                  <div class="app-ui-rows">
+                    <div class="phone-widget widget-depth app-row">
+                      <div class="app-row-icon app-row-icon-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                      </div>
+                      <div class="app-row-bars"><div class="bar bar-wide"></div><div class="bar bar-narrow"></div></div>
+                    </div>
+                    <div class="phone-widget widget-depth app-row">
+                      <div class="app-row-icon app-row-icon-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                      </div>
+                      <div class="app-row-bars"><div class="bar bar-medium"></div><div class="bar bar-wide"></div></div>
+                    </div>
+                  </div>
+
+                  <div class="home-indicator"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-badge floating-ui-badge badge-top gsap-reveal">
+              <div class="badge-icon badge-icon-blue"><span aria-hidden="true">💰</span></div>
+              <div><p class="badge-title">$500 Saved</p><p class="badge-sub">Milestone unlocked</p></div>
+            </div>
+
+            <div class="floating-badge floating-ui-badge badge-bottom gsap-reveal">
+              <div class="badge-icon badge-icon-indigo"><span aria-hidden="true">📊</span></div>
+              <div><p class="badge-title">Budget Synced</p><p class="badge-sub">Updated just now</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-left-text gsap-reveal">
+          <h3>Clarity, built in.</h3>
+          <p class="card-desc">Track spending, build budgets, hit your goals — all in one clear view.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mission" class="content-section mission-section">
+  <div class="bg-grid-theme" aria-hidden="true"></div>
+  <div class="mission-inner">
+    <p class="eyebrow gsap-reveal" id="missionEyebrow">About us</p>
+    <h2 class="mission-heading text-3d-matte gsap-reveal" id="missionHeading">Our Mission</h2>
+    <p class="mission-desc gsap-reveal" id="missionDesc">PocketPlanner is a personal finance app built to help you see the full picture. Track spending across every account, build budgets that actually hold up, and run "what if" scenarios on your future before you commit to them — no spreadsheets, no guesswork, just a clear, calm view of where your money goes and where it could take you.</p>
+  </div>
+</section>
+
+<section id="why-track" class="stats-section">
+  <div class="stats-inner">
+    <p class="eyebrow">Why it matters</p>
+    <h2>The cost of not tracking it.</h2>
+    <p class="sub">Most people aren't bad with money — they just don't have a clear view of it. Here's what that blind spot costs, nationally.</p>
+
+    <div class="stats-grid">
+      <div class="chart-card card-line reveal">
+        <span class="card-kicker"><span class="kicker-dot"></span>The bigger picture</span>
+        <h3 class="chart-title">U.S. credit card debt is climbing again</h3>
+        <div class="chart-canvas-wrap chart-canvas-tall">
+          <canvas id="chartDebt" role="img" aria-label="Line chart. Total U.S. credit card debt was 0.93 trillion dollars in 2019, fell to 0.77 trillion in 2021, then climbed to 0.99 trillion in 2023, 1.21 trillion in 2024, and 1.28 trillion in 2025."></canvas>
+        </div>
+        <details class="chart-table">
+          <summary>View as table</summary>
+          <table>
+            <thead><tr><th>Year</th><th>Total debt</th></tr></thead>
+            <tbody>
+              <tr><td>2019</td><td>$0.93T</td></tr>
+              <tr><td>2021</td><td>$0.77T</td></tr>
+              <tr><td>2023</td><td>$0.99T</td></tr>
+              <tr><td>2024</td><td>$1.21T</td></tr>
+              <tr><td>2025</td><td>$1.28T</td></tr>
+            </tbody>
+          </table>
+        </details>
+        <p class="chart-source">Source: Federal Reserve Bank of New York, Household Debt and Credit Report</p>
+      </div>
+
+      <div class="chart-card card-meter reveal">
+        <span class="card-kicker"><span class="kicker-dot"></span>Retirement</span>
+        <h3 class="chart-title">Saved for retirement</h3>
+        <div class="meter-wrap">
+          <div class="meter-value"><span class="meter-count" data-target="46">0</span>%</div>
+          <p class="meter-label">of Americans have $0 saved for retirement</p>
+          <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+        </div>
+        <p class="chart-source">Source: Federal Reserve, Survey of Consumer Finances</p>
+      </div>
+
+      <div class="chart-card card-doughnut reveal">
+        <span class="card-kicker"><span class="kicker-dot"></span>Emergencies</span>
+        <h3 class="chart-title">How people cover a surprise $1,000 bill</h3>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartEmergency" role="img" aria-label="Doughnut chart. 41% would use savings. 25% would use a credit card and carry the balance. 34% would use another method or could not cover it."></canvas>
+        </div>
+        <details class="chart-table">
+          <summary>View as table</summary>
+          <table>
+            <thead><tr><th>Method</th><th>Share</th></tr></thead>
+            <tbody>
+              <tr><td>Savings</td><td>41%</td></tr>
+              <tr><td>Credit card, paid over time</td><td>25%</td></tr>
+              <tr><td>Other / couldn't cover it</td><td>34%</td></tr>
+            </tbody>
+          </table>
+        </details>
+        <p class="chart-source">Source: Bankrate, 2025 Emergency Savings Report</p>
+      </div>
+
+      <div class="chart-card card-bar reveal">
+        <span class="card-kicker"><span class="kicker-dot"></span>Cash flow</span>
+        <h3 class="chart-title">Living paycheck to paycheck</h3>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartPaycheck" role="img" aria-label="Bar chart. 72% of Gen Z, 65% of Millennials, and 57% of all adults report living paycheck to paycheck."></canvas>
+        </div>
+        <details class="chart-table">
+          <summary>View as table</summary>
+          <table>
+            <thead><tr><th>Group</th><th>Share</th></tr></thead>
+            <tbody>
+              <tr><td>Gen Z</td><td>72%</td></tr>
+              <tr><td>Millennials<1/td><td>65%</td></tr>
+              <tr><td>All adults</td><td>57%</td></tr>
+            </tbody>
+          </table>
+        </details>
+        <p class="chart-source">Source: 2025 consumer finance survey</p>
+      </div>
+    </div>
+  </div>
+</section>
+11
+<main>
+
+  <section id="testimonials" class="content-section testimonials-section">
+    <div class="testimonials-inner">
+      <p class="eyebrow">What people are saying</p>
+      <h2>Real people, real clarity.</h2>
+
+      <div class="reel" id="testimonialReel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Testimonials">
+        <div class="reel-visual" aria-hidden="true">
+          <div class="reel-cols">
+            <div class="reel-col reel-col-side" id="reelLeft"></div>
+            <div class="reel-col reel-col-middle" id="reelMiddle"></div>
+            <div class="reel-col reel-col-side" id="reelRight"></div>
+          </div>
+        </div>
+
+        <div class="reel-content">
+          <svg class="reel-quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.58 17.32C3.55 16.23 3 15 3 13.01c0-3.5 2.46-6.64 6.03-8.19l.9 1.38c-3.34 1.8-4 4.15-4.25 5.62.54-.28 1.24-.38 1.93-.31 1.8.17 3.23 1.65 3.23 3.49a3.5 3.5 0 0 1-3.5 3.5c-1.07 0-2.1-.49-2.75-1.18zm10 0C13.55 16.23 13 15 13 13.01c0-3.5 2.46-6.64 6.03-8.19l.9 1.38c-3.34 1.8-4 4.15-4.25 5.62.54-.28 1.24-.38 1.93-.31 1.8.17 3.23 1.65 3.23 3.49a3.5 3.5 0 0 1-3.5 3.5c-1.07 0-2.1-.49-2.75-1.18z"/>
+          </svg>
+
+          <div class="reel-text-stage">
+            <div class="reel-text-sizer" id="reelSizer" aria-hidden="true">
+              <p class="reel-quote"></p>
+              <p class="reel-author"></p>
+            </div>
+            <div class="reel-text-active" id="reelTextActive" aria-live="polite">
+              <p class="reel-quote" id="reelQuote"></p>
+              <p class="reel-author" id="reelAuthor"></p>
+            </div>
+          </div>
+
+          <div class="reel-controls">
+            <button type="button" class="reel-btn" id="reelPrev" aria-label="Previous testimonial">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5 3.5 6l4 3.5"/></svg>
+            </button>
+            <button type="button" class="reel-btn" id="reelNext" aria-label="Next testimonial">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 2.5 4 3.5-4 3.5"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features-section">
+    <div class="features-inner">
+      <p class="eyebrow">What you can do</p>
+      <h2>See it before you live it.</h2>
+      <p class="sub features-sub">Add your real numbers, project them forward, then bend the "what ifs" until the plan feels right.</p>
+
+      <div class="features-grid">
+
+        <div class="feature-card feature-card-data reveal">
+          <div class="feature-visual feature-visual-ribbon">
+            <svg class="feature-ribbon" viewBox="0 0 254 104" fill="none" aria-hidden="true">
+              <path d="M112.891 97.7022C140.366 97.0802 171.004 94.6715 201.087 87.5116C210.43 85.2881 219.615 82.6412 228.284 78.2473C232.198 76.3179 235.905 73.9942 239.348 71.3124C241.85 69.2557 243.954 66.7571 245.555 63.9408C249.34 57.3235 248.281 50.5341 242.498 45.6109C239.033 42.7237 235.228 40.2703 231.169 38.3054C219.443 32.7209 207.141 28.4382 194.482 25.534C184.013 23.1927 173.358 21.7755 162.64 21.2989C161.376 21.3512 160.113 21.181 158.908 20.796C158.034 20.399 156.857 19.1682 156.962 18.4535C157.115 17.8927 157.381 17.3689 157.743 16.9139C158.104 16.4588 158.555 16.0821 159.067 15.8066C160.14 15.4683 161.274 15.3733 162.389 15.5286C179.805 15.3566 196.626 18.8373 212.998 24.462C220.978 27.2494 228.798 30.4747 236.423 34.1232C240.476 36.1159 244.202 38.7131 247.474 41.8258C254.342 48.2578 255.745 56.9397 251.841 65.4892C249.793 69.8582 246.736 73.6777 242.921 76.6327C236.224 82.0192 228.522 85.4602 220.502 88.2924C205.017 93.7847 188.964 96.9081 172.738 99.2109C153.442 101.949 133.993 103.478 114.506 103.79C91.1468 104.161 67.9334 102.97 45.1169 97.5831C36.0094 95.5616 27.2626 92.1655 19.1771 87.5116C13.839 84.5746 9.1557 80.5802 5.41318 75.7725C-0.54238 67.7259 -1.13794 59.1763 3.25594 50.2827C5.82447 45.3918 9.29572 41.0315 13.4863 37.4319C24.2989 27.5721 37.0438 20.9681 50.5431 15.7272C68.1451 8.8849 86.4883 5.1395 105.175 2.83669C129.045 0.0992292 153.151 0.134761 177.013 2.94256C197.672 5.23215 218.04 9.01724 237.588 16.3889C240.089 17.3418 242.498 18.5197 244.933 19.6446C246.627 20.4387 247.725 21.6695 246.997 23.615C246.455 25.1105 244.814 25.5605 242.63 24.5811C230.322 18.9961 217.233 16.1904 204.117 13.4376C188.761 10.3438 173.2 8.36665 157.558 7.52174C129.914 5.70776 102.154 8.06792 75.2124 14.5228C60.6177 17.8788 46.5758 23.2977 33.5102 30.6161C26.6595 34.3329 20.4123 39.0673 14.9818 44.658C12.9433 46.8071 11.1336 49.1622 9.58207 51.6855C4.87056 59.5336 5.61172 67.2494 11.9246 73.7608C15.2064 77.0494 18.8775 79.925 22.8564 82.3236C31.6176 87.7101 41.3848 90.5291 51.3902 92.5804C70.6068 96.5773 90.0219 97.7419 112.891 97.7022Z" fill="currentColor"/>
+            </svg>
+            <span class="feature-stat">5 min</span>
+          </div>
+          <h3 class="feature-title">Add your data</h3>
+          <p class="feature-desc">Enter real balances, income, and bills — manually or by connecting accounts. It's your financial picture, accurate from day one.</p>
+        </div>
+
+        <div class="feature-card feature-card-security reveal">
+          <div class="feature-visual feature-visual-ring">
+            <div class="feature-ring">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2.5l7 3.2v5.1c0 4.6-2.9 8.6-7 9.9-4.1-1.3-7-5.3-7-9.9V5.7l7-3.2z"/>
+                <path d="M9 12.2l2 2 4-4.5"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="feature-title">Bank-level security</h3>
+          <p class="feature-desc">Everything you enter is encrypted end to end. We never sell your data, and you can delete it whenever you want.</p>
+        </div>
+
+        <div class="feature-card feature-card-live reveal">
+          <div class="feature-visual feature-visual-chart">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <svg class="feature-line-chart" viewBox="0 0 260 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M4,80 C40,70 60,40 90,46 C120,52 130,20 160,24 C190,28 210,10 256,6 L256,100 L4,100 Z" fill="url(#featureLineFill)"/>
+              <path d="M4,80 C40,70 60,40 90,46 C120,52 130,20 160,24 C190,28 210,10 256,6" stroke="var(--sage)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="featureLineFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--sage)" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="var(--sage)" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h3 class="feature-title">Always up to date</h3>
+          <p class="feature-desc">Balances and transactions sync automatically, so your plan never runs on stale numbers.</p>
+        </div>
+
+        <div class="feature-card feature-card-simulate reveal">
+          <div class="feature-copy">
+            <div class="feature-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 6h6v6"/></svg>
+            </div>
+            <h3 class="feature-title">Simulate your future</h3>
+            <p class="feature-desc">Pick a time horizon — 1, 5, or 20 years — and watch today's habits play forward against your real numbers. See exactly where you'll land before you get there.</p>
+          </div>
+          <div class="feature-mock feature-mock-chart">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <svg class="feature-projection-chart" viewBox="0 0 320 160" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M8,140 C60,130 90,110 120,100 C160,88 180,60 220,45 C255,32 280,20 312,10 L312,160 L8,160 Z" fill="url(#projFill)"/>
+              <path d="M8,140 C60,130 90,110 120,100 C160,88 180,60 220,45 C255,32 280,20 312,10" stroke="var(--gold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <circle cx="312" cy="10" r="5" fill="var(--gold)"/>
+              <defs>
+                <linearGradient id="projFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="feature-mock-label">+5 years</span>
+          </div>
+        </div>
+
+        <div class="feature-card feature-card-imagination reveal">
+          <div class="feature-copy">
+            <div class="feature-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>
+            </div>
+            <h3 class="feature-title">Imagination Mode</h3>
+            <p class="feature-desc">Nudge the knobs — salary, rent, savings rate — and watch your simulation react instantly. A sandbox for every "what if," before you commit to it in real life.</p>
+          </div>
+          <div class="feature-mock feature-mock-chips">
+            <div class="chip-line" aria-hidden="true"></div>
+            <span class="chip chip-left">Salary <strong>+10%</strong></span>
+            <span class="chip chip-right">Rent <strong>−$200</strong></span>
+            <span class="chip chip-left">Savings rate <strong>25%</strong></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="content-section cta-section">
+    <div class="bg-grid-theme" aria-hidden="true"></div>
+    <div class="cta-inner">
+      <p class="eyebrow gsap-reveal" id="ctaEyebrow">Get started</p>
+      <h2 class="text-3d-matte gsap-reveal" id="ctaHeading">Your money, modeled.</h2>
+      <p class="sub cta-sub gsap-reveal" id="ctaSub">Create a free account and see your first projection in minutes — no credit card, no spreadsheet, no guesswork.</p>
+      <div class="cta-buttons-row gsap-reveal" id="ctaButtons">
+        <a href="#" class="cta-btn cta-btn-primary" data-auth-link="signup">
+          <span class="cta-btn-label">Sign up now</span>
+          <span class="cta-btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#" class="cta-btn cta-btn-secondary" data-auth-link="login"><span class="cta-btn-label">Log in</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg width="22" height="22" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <path d="M 85 30 A 42 42 0 1 0 85 90" stroke="var(--sage)" stroke-width="10" stroke-linecap="round"/>
+          <polyline points="44,76 66,54 79,63 101,39" stroke="var(--gold)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="101" cy="39" r="6.5" fill="var(--gold)"/>
+        </svg>
+        <span>PocketPlanner</span>
+      </div>
+      <p class="footer-tagline">Model your money. Meet your future.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#home">Home</a>
+      <a href="#mission">Mission</a>
+      <a href="#why-track">Why Track</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#features">Features</a>
+    </nav>
+  </div>
+
+  <p class="footer-copyright">© 2026 PocketPlanner. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

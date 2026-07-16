@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* PocketPlanner — Light */
+    /* Paper #FAF8F4 */
+    --background: 40 33% 97%;
+    /* Ink #1E2B24 */
+    --foreground: 149 22% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 149 22% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 149 22% 15%;
+
+    /* Sage #6E9C7D */
+    --primary: 138 19% 52%;
+    --primary-foreground: 40 33% 97%;
+
+    /* Sage Tint #DCEAE0 */
+    --secondary: 137 27% 89%;
+    --secondary-foreground: 149 22% 15%;
+
+    --muted: 40 20% 94%;
+    /* Ink Soft #5B6B62 */
+    --muted-foreground: 145 8% 39%;
+
+    /* Gold Tint #F3EBD8 */
+    --accent: 41 55% 90%;
+    /* Gold #C7A661 */
+    --accent-foreground: 40 51% 58%;
+
+    /* Rose #C97B72 */
+    --destructive: 5 47% 62%;
+    --destructive-foreground: 40 33% 97%;
+
+    /* Line #E3DED3 */
+    --border: 41 24% 85%;
+    --input: 41 24% 85%;
+    --ring: 138 19% 52%;
+
+    /* Gold #C7A661 */
+    --gold: 40 51% 58%;
+    --gold-foreground: 149 22% 15%;
+    --gold-tint: 41 55% 90%;
+
+    --radius: 0.875rem;
+
+    /* Sidebar — aliased to brand tokens so it stays a floating card against the paper background */
+    --sidebar-background: var(--card);
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
+  }
+
+  .dark {
+    /* PocketPlanner — Dark */
+    /* Charcoal #121814 */
+    --background: 138 14% 8%;
+    /* Paper Dark #EDEFE9 */
+    --foreground: 84 12% 92%;
+
+    /* Sage Tint dark #22332A as surface */
+    --card: 138 20% 17%;
+    --card-foreground: 84 12% 92%;
+
+    --popover: 138 20% 17%;
+    --popover-foreground: 84 12% 92%;
+
+    /* Sage dark #8FC29C */
+    --primary: 133 32% 66%;
+    --primary-foreground: 138 14% 8%;
+
+    --secondary: 138 20% 17%;
+    --secondary-foreground: 84 12% 92%;
+
+    --muted: 138 20% 17%;
+    /* Ink Soft dark #A8B5AC */
+    --muted-foreground: 137 10% 69%;
+
+    --accent: 40 34% 20%;
+    --accent-foreground: 41 55% 66%;
+
+    /* Rose dark #D99089 */
+    --destructive: 5 51% 69%;
+    --destructive-foreground: 138 14% 8%;
+
+    /* Line dark #2A332C */
+    --border: 137 9% 18%;
+    --input: 137 9% 18%;
+    --ring: 133 32% 66%;
+
+    /* Gold dark #D8BB7A */
+    --gold: 41 55% 66%;
+    --gold-foreground: 138 14% 8%;
+    --gold-tint: 40 34% 20%;
+
+    --sidebar-background: var(--card);
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'ss01';
+  }
+
+  .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .font-mono-data {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
