@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Undo2, Redo2, RotateCcw } from "lucide-react";
+import { Undo2, Redo2, RotateCcw, MessageSquareHeart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PresetPicker } from "@/components/simulation/PresetPicker";
 import { ControlPanel } from "@/components/simulation/ControlPanel";
@@ -72,6 +72,18 @@ export default function SimulationPage() {
     return () => clearTimeout(timer);
   }, [output, surveyEligible]);
 
+  // Manual "Feedback" button — deliberately bypasses the 14-day
+  // eligibility gate above. That gate exists to stop the PASSIVE
+  // auto-prompt from being naggy; a user who actively clicks to give
+  // feedback has already opted into the interruption, so there's no
+  // reason to block them. Still fires sim_survey_shown, so it also
+  // resets the auto-prompt's own 14-day clock — they won't immediately
+  // get nagged again automatically right after giving feedback manually.
+  const openFeedback = () => {
+    trackEvent("sim_survey_shown");
+    setShowSurvey(true);
+  };
+
   const { result: monteCarloResult, showSpinner: monteCarloComputing } = useMonteCarlo(debouncedInput, input.settings.monteCarloEnabled);
   const compareOutput = useMemo(() => (compareScenario ? runSimulation(compareScenario.input) : null), [compareScenario]);
 
@@ -107,6 +119,9 @@ export default function SimulationPage() {
             onClick={() => activePresetId && handlePresetSelect(activePresetId)}
           >
             <RotateCcw className="h-3.5 w-3.5" /> Reset
+          </Button>
+          <Button variant="outline" size="sm" className="gap-1.5" onClick={openFeedback}>
+            <MessageSquareHeart className="h-3.5 w-3.5" /> Feedback
           </Button>
         </div>
       </div>
