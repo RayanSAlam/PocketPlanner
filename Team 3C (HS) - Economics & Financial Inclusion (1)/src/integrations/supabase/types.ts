@@ -823,6 +823,10 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: undefined
       }
+      delete_all_user_data: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
       get_financial_progress_inputs: {
         Args: { p_window_start: string; p_window_end: string }
         Returns: {

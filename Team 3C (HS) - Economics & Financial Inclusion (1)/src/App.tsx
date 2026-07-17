@@ -14,6 +14,7 @@ import ImportHistoryPage from "@/pages/dashboard/ImportHistoryPage";
 import SimulationPage from "@/pages/dashboard/SimulationPage";
 import BudgetingPage from "@/pages/dashboard/BudgetingPage";
 import ImpactDashboardPage from "@/pages/dashboard/ImpactDashboardPage";
+import SettingsPage from "@/pages/dashboard/SettingsPage";
 import StubPage from "@/pages/dashboard/StubPage";
 import Auth from "./pages/Auth";
 import ResetPassword from "./pages/ResetPassword";
@@ -44,7 +45,8 @@ const App = () => (
                 <Route path="/simulation" element={<SimulationPage />} />
                 <Route path="/budgeting" element={<BudgetingPage />} />
                 <Route path="/impact-dashboard" element={<ImpactDashboardPage />} />
-                {STUB_ROUTES.filter((r) => !["/manual-entry", "/charts", "/upload", "/import-history", "/simulation", "/budgeting", "/impact-dashboard"].includes(r.path)).map((r) => (
+                <Route path="/settings" element={<SettingsPage />} />
+                {STUB_ROUTES.filter((r) => !["/manual-entry", "/charts", "/upload", "/import-history", "/simulation", "/budgeting", "/impact-dashboard", "/settings"].includes(r.path)).map((r) => (
                   <Route key={r.path} path={r.path} element={<StubPage {...r} />} />
                 ))}
               </Route>

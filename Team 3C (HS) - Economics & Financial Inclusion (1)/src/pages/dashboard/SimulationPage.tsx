@@ -20,6 +20,8 @@ import { runSimulation } from "@/lib/simulation/engine";
 import { getPreset, PRESETS } from "@/lib/simulation/presets";
 import type { SavedScenario } from "@/lib/simulation/scenarioStorage";
 import { trackEvent } from "@/lib/impact/trackEvent";
+import { useSurveyEligibility } from "@/hooks/useSurveyEligibility";
+import { SurveyPrompt } from "@/components/simulation/SurveyPrompt";
 
 const DEFAULT_INPUT = PRESETS[0].input;
 
@@ -51,6 +53,25 @@ export default function SimulationPage() {
     chartRenderedTrackedRef.current = true;
     trackEvent("sim_chart_rendered", { msFromOpen: Math.round(performance.now() - mountedAtRef.current) });
   }, [output]);
+
+  // Experience Quality micro-survey — shown at most once per eligibility
+  // window (see useSurveyEligibility), and only after the user has had a
+  // few seconds to actually look at the chart rather than firing the
+  // instant it renders.
+  const { data: surveyEligible } = useSurveyEligibility();
+  const [showSurvey, setShowSurvey] = useState(false);
+  const surveyTriggeredRef = useRef(false);
+
+  useEffect(() => {
+    if (surveyTriggeredRef.current || output.length === 0 || !surveyEligible) return;
+    surveyTriggeredRef.current = true;
+    const timer = setTimeout(() => {
+      trackEvent("sim_survey_shown");
+      setShowSurvey(true);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [output, surveyEligible]);
+
   const { result: monteCarloResult, showSpinner: monteCarloComputing } = useMonteCarlo(debouncedInput, input.settings.monteCarloEnabled);
   const compareOutput = useMemo(() => (compareScenario ? runSimulation(compareScenario.input) : null), [compareScenario]);
 
@@ -123,6 +144,8 @@ export default function SimulationPage() {
       <p className="text-center text-xs text-muted-foreground">
         This tool projects based on the numbers and rates you enter — it isn't financial advice, and real markets, taxes, and life are messier than any model.
       </p>
+
+      {showSurvey && <SurveyPrompt onDismiss={() => setShowSurvey(false)} />}
     </div>
   );
 }
