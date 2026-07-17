@@ -1,10 +1,10 @@
 (function () {
   // The deployed PocketPlanner app (Team 3C folder), on Vercel. Every
-  // Sign Up / Log In link updates from this one spot. NOTE: verify this
-  // is the app's stable production domain (Vercel project -> Settings ->
-  // Domains), not a per-deployment preview URL with a random hash in it —
-  // those change on every redeploy.
-  var APP_URL = 'https://pocket-planner-g76yqiq73-pocket-planner.vercel.app';
+  // Sign Up / Log In link updates from this one spot. Confirmed via
+  // Vercel project -> Settings -> Domains (the "Production" entry there)
+  // — a previous URL used here was actually a stale per-deployment link
+  // that never auto-updated; this one does.
+  var APP_URL = 'https://pocket-planner-seven.vercel.app';
 
   document.querySelectorAll('[data-auth-link]').forEach(function (link) {
     var mode = link.getAttribute('data-auth-link');
