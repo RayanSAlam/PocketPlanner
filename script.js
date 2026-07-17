@@ -1,9 +1,10 @@
 (function () {
-  // Local dev server for the Team 3C (Lovable) app — `npm run dev` in that
-  // folder serves it here (falls back to 8081+ if 8080 is already taken).
-  // Swap this to the published Lovable/custom-domain URL once the app is
-  // live; every Sign Up / Log In link updates from this one spot.
-  var APP_URL = 'http://localhost:8081';
+  // The deployed PocketPlanner app (Team 3C folder), on Vercel. Every
+  // Sign Up / Log In link updates from this one spot. NOTE: verify this
+  // is the app's stable production domain (Vercel project -> Settings ->
+  // Domains), not a per-deployment preview URL with a random hash in it —
+  // those change on every redeploy.
+  var APP_URL = 'https://pocket-planner-g76yqiq73-pocket-planner.vercel.app';
 
   document.querySelectorAll('[data-auth-link]').forEach(function (link) {
     var mode = link.getAttribute('data-auth-link');
